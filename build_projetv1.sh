@@ -154,13 +154,6 @@ ip netns exec routeurB ip a add dev routeurB-eth0 10.87.0.2/24
 ip netns exec routeurB ip a add dev routeurB-eth1 172.16.2.254/24
 ip netns exec routeurB sudo sysctl net.ipv4.conf.all.forwarding=1
 
-#Configuration des routes
-
-ip netns exec routeurA ip r add 172.16.2.0/24 via 10.87.0.2
-ip netns exec routeurB ip r add 172.16.1.0/24 via 10.87.0.1
-ip netns exec routeur1 ip r add 10.87.0.0/24 via 172.16.1.253
-
-
 
 
 
